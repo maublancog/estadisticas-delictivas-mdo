@@ -12,13 +12,13 @@ library(ggthemes)
 
 # Importación y tratamiento de data ----------------------------------------
 
-oij_2015_2020 <- read_excel ("oij_2015_2020.xlsx")
+oij_2015_2020 <- read_excel ("Data/oij_2015_2020.xlsx")
 oij_2015_2020 <- clean_names (oij_2015_2020)
 oij_2015_2020 <- oij_2015_2020 %>% mutate (ano = format(as.Date (oij_2015_2020$fecha, format = "%Y / %m / %d"), "%Y"))
 oij_2015_2020 <- oij_2015_2020 %>% mutate (mes = format(as.Date (oij_2015_2020$fecha, format = "%Y / %m / %d"), "%m"))
 oij_2015_2020 <- oij_2015_2020 %>% mutate (ano_mes = format(as.Date (oij_2015_2020$fecha, format = "%Y / %m / %d"), "%Y, %m"))
 
-ids_2017 <- read_excel ("ids_2017.xlsx")
+ids_2017 <- read_excel ("Data/ids_2017.xlsx")
 ids_2017 <- clean_names (ids_2017)
 ids_2017 <- na.omit (ids_2017)
 ids_2017_mdo <- ids_2017 %>% filter (indice_de_desarrollo_social_distrital_2017_segun_division_territorial_administrativa %in% c(11501, 11502, 11503, 11504))
